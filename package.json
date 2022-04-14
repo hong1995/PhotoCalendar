@@ -1,0 +1,22 @@
+{
+  "name": "photocalendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kypa123/PhotoCalendar.git"
+  },
+  "keywords": [
+    "elice_coop"
+  ],
+  "author": "jiho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kypa123/PhotoCalendar/issues"
+  },
+  "homepage": "https://github.com/kypa123/PhotoCalendar#readme"
+}
