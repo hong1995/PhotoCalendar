@@ -1,41 +1,20 @@
 const express = require("express");
 const { all } = require("express/lib/application");
+const PORT = 3030;
 const app = express();
+const home = require("./routes/home");
+ //home이라고 명시하면 index.js 파일을 자동으로 찾아가게 됨.
+//이를 통해 js의 뷰를 관리하는 routes폴더의 index.js를 모듈화 하여
+//이 모듈을 가져와 사용할 수 있음. spring의 indexController와 유사
 
-app.get("/", (req, res)=>{
-    res.send(`<!DOCTYPE html>
-    <html lang="ko">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Hello</title>
-    </head>
-    <body>
-      <input type="text" placeholder="아이디"><br>
-      <input type="text" placeholder="비밀번호"><br>
-      <button>로그인</button>
-    </body>
-    </html>`);
-});
-
-app.get("/login", (req,res)=>{
-    res.send(`<!DOCTYPE html>
-    <html lang="ko">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Hello</title>
-    </head>
-    <body>
-      <input type="text" placeholder="아이디"><br>
-      <input type="text" placeholder="비밀번호"><br>
-      <button>로그인</button>
-    </body>
-    </html>`);
-});
-
-app.listen(3030, function(){
+app.listen(PORT, function(){
     console.log("서버가 가동되었습니다");
 })
+app.set("views", "./view");
+app.set("view engine", "ejs");
+app.engine("html", require("ejs").renderFile);
+
+
+
+   
+app.use("/", home);      //use란 미들웨어를 등록해주는 메서드.

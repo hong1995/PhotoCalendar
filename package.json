@@ -21,6 +21,7 @@
   "homepage": "https://github.com/kypa123/PhotoCalendar#readme",
   "dependencies": {
     "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.3",
     "mongodb": "^4.5.0",
     "mongoose": "^6.3.0"
