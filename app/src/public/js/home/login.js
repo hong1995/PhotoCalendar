@@ -19,7 +19,17 @@ function login(){
     })
     .then((res) => res.json())  //res.json파일은 promise형식의 파일로 받아짐. 이를 다시한번 then으로 가공 후 읽기 가능.
     // .then((res) => console.log(res));    이 함수를 밑처럼 생략가능. 함수를 1번 이상 넘길 때는 저렇게 생략이 가능함.
-    .then(console.log);
+    // .then(console.log);   로그인 버튼을 눌렀을 시 로그인 성공했는지 실패했는지 로그에 띄움
+    .then((res) => {
+        if(res.success){
+            location.href="/afterlogin";      //로그인 성공시 로그인성공창으로 redirect
+        } else{
+            alert(res.msg);         //실패 시 res.json에서 실패 시 입력해두었던 msg필드 alert
+        }
+    })
+    .catch((error) => {
+        console.error(new Error("로그인 중, 에러 발생"));
+    })
 }
 
 //fetch 함수?

@@ -5,8 +5,8 @@ const output={
     login: (req,res)=>{
         res.render("home/login.html");
     },
-    beauty: (req, res)=>{
-        res.render("beauty.html");
+    afterlogin: (req, res)=>{
+        res.render("home/afterlogin.html");
     },
 }
 const users ={
