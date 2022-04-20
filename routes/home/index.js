@@ -1,15 +1,14 @@
+// import {hello, login} from "./home.ctrl.js";
+//import대신 
+
 const express = require("express");
 const router = express.Router();
 
+const ctrl = require("./home.ctrl");
 
-router.get("/", (req, res)=>{
+router.get("/", ctrl.hello);
     //세션확인기능 예정
-    res.render("home/index.html");
-});
 
-router.get("/login", (req,res)=>{
-    res.render("home/login.html");
-});
-
+router.get("/login", ctrl.login);
 
 module.exports = router;

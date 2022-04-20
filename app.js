@@ -7,9 +7,7 @@ const home = require("./routes/home");
 //이를 통해 js의 뷰를 관리하는 routes폴더의 index.js를 모듈화 하여
 //이 모듈을 가져와 사용할 수 있음. spring의 indexController와 유사
 
-app.listen(PORT, function(){
-    console.log("서버가 가동되었습니다");
-})
+
 app.set("views", "./view");
 app.set("view engine", "ejs");
 app.engine("html", require("ejs").renderFile);
@@ -18,3 +16,6 @@ app.engine("html", require("ejs").renderFile);
 
    
 app.use("/", home);      //use란 미들웨어를 등록해주는 메서드.
+
+
+module.exports = app;
