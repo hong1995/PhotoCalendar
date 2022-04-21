@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(`${__dirname}/src/public`));
 //디렉토리 네임은 현재 파일의 위치를 반환, 그 후 /src/public으로 정적 경로로 등록
 
-   
+
 app.use("/", home);      //use란 미들웨어를 등록해주는 메서드.
 
 
